@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CashMinute</string>
+    <string name="amount">قيمة</string>
+    <string name="amount_cost">1,000</string>
+    <string name="enter_card_number">ادخل رقم الكارت</string>
+    <string name="valid_thru">صالحيه</string>
+    <string name="cvv">CVV</string>
+    <string name="egyptian_pounds">جنيه مصرى</string>
+    <string name="fees_included_egp_5">تشمل 5 جنيه رسوم</string>
+    <string name="send">حول</string>
+    <string name="sender">الراسل</string>
+    <string name="recipient">المرسل اليه</string>
+    <string name="wednesday">الاربعاء,</string>
+    <string name="may_2021">19 مايو 2021</string>
+    <string name="empty_fields_error">املا جميع الحقول!</string>
+    <string name="internet_connection_error">تاكد من اتصال الانترنت!</string>
+</resources>

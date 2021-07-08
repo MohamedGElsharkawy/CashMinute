@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.sharkawy.cashminute"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    configuration ->
+        testImplementation 'junit:junit:4.+'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+        androidX(configuration)
+        kotlinX(configuration)
+        archComponentX(configuration)
+        httpDependencies(configuration)
+}
+
+private static void androidX(configuration) {
+    configuration.implementation 'androidx.core:core-ktx:1.5.0'
+    configuration.implementation 'androidx.appcompat:appcompat:1.3.0'
+    configuration.implementation 'com.google.android.material:material:1.3.0'
+    configuration.implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    configuration.implementation("androidx.activity:activity-ktx:1.2.3")
+}
+
+private static void kotlinX(configuration) {
+    def coroutine_version = "1.4.3"
+    configuration.implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+}
+
+private static void archComponentX(configuration) {
+    def lifecycle_version = "2.3.0"
+    def nav_version = "2.3.5"
+
+    configuration.implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    configuration.implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    configuration.implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    configuration.implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    configuration.implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+}
+
+private static void httpDependencies(configuration) {
+    def retrofit_version = "2.9.0"
+    configuration.implementation 'com.google.code.gson:gson:2.8.6'
+    configuration.implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    configuration.implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    configuration.implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    configuration.implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    configuration.implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+}
+

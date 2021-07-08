@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CashMinute</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="amount">Amount</string>
+    <string name="amount_cost">1,000</string>
+    <string name="enter_card_number">Enter card number</string>
+    <string name="valid_thru">Valid Thru</string>
+    <string name="cvv">CVV</string>
+    <string name="egyptian_pounds">Egyptian pounds</string>
+    <string name="fees_included_egp_5">Fees included: EGP 5</string>
+    <string name="send">Send</string>
+    <string name="sender">Sender</string>
+    <string name="recipient">Recipient</string>
+    <string name="wednesday">Wednesday,</string>
+    <string name="may_2021">19 May 2021</string>
+    <string name="empty_fields_error">Fill all fields!</string>
+    <string name="internet_connection_error">Check your internet connection!</string>
+</resources>

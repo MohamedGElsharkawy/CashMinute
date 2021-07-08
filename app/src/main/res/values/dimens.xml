@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="date_16dp">16dp</dimen>
+    <dimen name="sender_tv_24dp">24dp</dimen>
+    <dimen name="sender_img_16dp">16dp</dimen>
+    <dimen name="sender_card_16dp">16dp</dimen>
+    <dimen name="sender_tv_16dp">16dp</dimen>
+    <dimen name="sender_input_height">40dp</dimen>
+</resources>
