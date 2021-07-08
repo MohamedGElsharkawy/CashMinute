@@ -11,4 +11,4 @@ This sample app demonstrate how to transfer money with collection card credentia
 
 
 # Demo
-![DEMO](https://github.com/MohamedGElsharkawy/CashMinute/blob/main/demo.gif)
+![DEMO](https://github.com/MohamedGElsharkawy/CashMinute/blob/master/demo.gif)
