@@ -1,5 +1,6 @@
 package com.sharkawy.cashminute.presentation.feature.credit
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,8 @@ class CreditFragment : Fragment() {
         )
     }
 
+    private lateinit var progress: ProgressDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +47,7 @@ class CreditFragment : Fragment() {
 
     private fun setupObservers() {
         viewModel.message.observe(viewLifecycleOwner, Observer {
+            if (progress.isShowing) progress.dismiss()
             onSnack(binding.root, it)
         })
     }
@@ -59,6 +63,7 @@ class CreditFragment : Fragment() {
                         binding.cardCvvInput.text.toString()
                     )
                 ) {
+                    showLoading()
                     sendCreditPayload()
                 }
             } else {
@@ -96,6 +101,14 @@ class CreditFragment : Fragment() {
         viewModel.sendCreditPayload(body)
     }
 
+
+    private fun showLoading() {
+        progress = ProgressDialog(activity)
+        progress.setTitle("Transfer amount")
+        progress.setMessage("Waiting...")
+        progress.setCancelable(false)
+        progress.show()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
